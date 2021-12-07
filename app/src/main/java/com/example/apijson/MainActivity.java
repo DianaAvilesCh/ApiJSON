@@ -2,7 +2,9 @@ package com.example.apijson;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.apijson.WebService.Asynchtask;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
 
     @Override
     public void processFinish(String result) throws JSONException {
-        TextView txtUser = (TextView)findViewById(R.id.txtListUser);
+        TextView txtUser = (TextView)findViewById(R.id.txtListUser2);
 
         ArrayList<String> lstUser = new ArrayList<String> ();
         JSONObject object = new JSONObject(result);
@@ -46,5 +48,10 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
         }
         txtUser.setKeyListener(null);
         txtUser.setText(lstUser.toString());
+    }
+
+    public void btVolley(View view){
+        Intent intent = new Intent(MainActivity.this,volley.class);
+        startActivity(intent);
     }
 }
