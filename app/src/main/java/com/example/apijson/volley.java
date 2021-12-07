@@ -32,7 +32,6 @@ public class volley extends AppCompatActivity {
         setContentView(R.layout.activity_volley);
 
         requestQueue = Volley.newRequestQueue(this);
-
         stringRequest();
     }
 
